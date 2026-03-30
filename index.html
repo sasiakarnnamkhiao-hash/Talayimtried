@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ta Ray - ร้านรับฝากขายและหาไอดี</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        mitr: ['Mitr', 'sans-serif'],
+                        fredoka: ['Fredoka', 'sans-serif'],
+                    },
+                    colors: {
+                        'game-blue': '#0600AB',
+                        'game-black': '#00033D',
+                        'neon-yellow': '#F2E6EE',
+                        'neon-orange': '#FFCCF2',
+                        'neon-red': '#977DFF',
+                        'neon-green': '#0600AB',
+                        'neon-blue': '#0033FF',
+                        'neon-purple': '#977DFF',
+                        'neon-pink': '#FFCCF2'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #00033D;
+            background: linear-gradient(135deg, #0600AB 0%, #00033D 100%);
+            margin: 0;
+            padding: 15px;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .game-card {
+            background-color: #00033D;
+            background: linear-gradient(180deg, #0600AB 0%, #00033D 100%);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            height: 100%;
+        }
+
+        /* 3D Text Effects */
+        .text-3d-title { color: #F2E6EE; text-shadow: 2px 2px 0px #977DFF, 4px 4px 0px #0600AB; letter-spacing: 1px; }
+        .text-3d-subtitle { color: #FFCCF2; text-shadow: 2px 2px 0px #0033FF; }
+        .text-3d-header { color: #F2E6EE; text-shadow: 2px 2px 0px #0033FF; }
+
+        /* Scoreboard style row */
+        .score-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 8px 16px; border-radius: 30px; margin-bottom: 10px;
+            font-family: 'Mitr', sans-serif; font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Polaroid Styles integrated into Dark Theme */
+        .polaroid {
+            background: #fff;
+            padding: 10px 10px 45px 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            position: relative;
+            border: 2px solid #0033FF;
+            border-radius: 4px;
+        }
+        .tape {
+            position: absolute; mix-blend-mode: multiply; opacity: 0.9; z-index: 20;
+        }
+        .tape-1 { clip-path: polygon(1% 2%, 99% 0%, 98% 98%, 0% 100%); background-color: #ffb6c1; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #00033D; }
+        ::-webkit-scrollbar-thumb { background: #977DFF; border-radius: 4px; }
+
+        .float-anim { animation: floating 3s ease-in-out infinite; }
+        .float-anim-delayed { animation: floating 3s ease-in-out infinite 1.5s; }
+        @keyframes floating {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+    </style>
+</head>
+<body class="font-mitr text-white antialiased">
+
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 relative z-10 p-2 md:p-4">
+
+        <div class="game-card rounded-2xl p-6 flex flex-col justify-center items-center text-center border border-[#0033FF]/40">
+            <div class="absolute top-4 left-6 float-anim z-0 flex items-center transform rotate-12">
+                <svg class="w-8 h-8 text-[#FFCCF2]" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            </div>
+            
+            <div class="polaroid transform rotate-[-2deg] w-full max-w-[180px] z-10 mb-6 mt-4">
+                <div class="tape tape-1 -top-4 left-1/2 transform -translate-x-1/2 rotate-3 w-24 h-6"></div>
+                <div class="w-full aspect-[4/5] bg-[#00033D] overflow-hidden relative border border-gray-300">
+                    <img src="IMG_7201.jpeg" alt="Ta Ray Shop Profile" class="w-full h-full object-cover">
+                </div>
+                <div class="absolute bottom-2 right-0 bg-game-black text-neon-pink px-3 py-1 text-xs font-fredoka font-bold rounded-l-md tracking-widest border border-neon-blue">
+                    TA RAY
+                </div>
+            </div>
+
+            <h1 class="font-fredoka text-5xl md:text-6xl text-3d-title leading-tight mb-2 z-10">TA RAY</h1>
+            
+            <div class="z-10 bg-[#00033D]/60 p-4 rounded-xl border-2 border-neon-blue w-full max-w-sm shadow-[4px_4px_0_#0033FF] mt-4">
+                <p class="text-sm leading-snug text-gray-200">
+                    ร้าน Ta Ray รับฝากขาย<br>รับทำป้ายฝากขาย ป้ายเรทต่างๆ ป้ายคิวอาร์ ปกเครดิต<br>
+                    <span class="text-neon-pink font-bold text-xs inline-block mt-2 tracking-wide">* ป้ายไอดียังไม่รับทำและรับหาไอดี</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="game-card rounded-2xl p-6 border border-[#0033FF]/40 flex flex-col justify-center">
+            <h2 class="font-fredoka text-3xl text-3d-header mb-6 z-10 text-center uppercase">ฝากขาย & เช็คคิว</h2>
+            
+            <div class="z-10 bg-[#00033D]/60 p-4 rounded-xl border border-[#0033FF]/30 mb-6">
+                <p class="text-neon-yellow font-bold uppercase mb-2 tracking-wide">วิธีการฝากขาย (ต้องเตรียมรูปดังนี้)</p>
+                <ul class="list-none space-y-2 ml-2 text-gray-200 text-sm">
+                    <li class="flex items-start"><svg class="w-4 h-4 mr-2 text-[#0033FF] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15 9L22 9L16 14L18 21L12 17L6 21L8 14L2 9L9 9Z"/></svg> สกิน เครื่องประดับ สัตว์เลี้ยง</li>
+                    <li class="flex items-start"><svg class="w-4 h-4 mr-2 text-[#977DFF] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15 9L22 9L16 14L18 21L12 17L6 21L8 14L2 9L9 9Z"/></svg> ของในคลัง ยอดเติม แรงค์</li>
+                    <li class="flex items-start"><svg class="w-4 h-4 mr-2 text-[#FFCCF2] shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15 9L22 9L16 14L18 21L12 17L6 21L8 14L2 9L9 9Z"/></svg> และจะมีแบบฟอร์มให้กรอก</li>
+                </ul>
+            </div>
+
+            <div class="mt-auto text-center z-10">
+                <a href="https://docs.google.com/spreadsheets/d/1-kKlNjdrTLPbQ0ogYQt7Fb-QtCoLyMmX0H57NfEOMwA/edit?usp=drivesdk" target="_blank" class="inline-block bg-neon-red border-[3px] border-neon-blue text-neon-yellow font-fredoka px-8 py-3 rounded-full text-lg shadow-[0_5px_0_#0033FF] transform hover:translate-y-1 hover:shadow-none transition uppercase tracking-widest">
+                    เช็คคิวงานที่นี่
+                </a>
+            </div>
+        </div>
+
+        <div class="game-card rounded-2xl p-6 border border-[#0033FF]/40 md:col-span-2 flex flex-col items-center">
+            <h2 class="font-fredoka text-3xl text-3d-header mb-1 z-10 uppercase">เรทราคาฝากขาย</h2>
+            <p class="text-neon-yellow font-fredoka text-xs mb-4 z-10 tracking-widest bg-black/20 px-4 py-1 rounded-full">* คนที่เพิ่งใช้บริการจ่ายก่อนทุกกรณี</p>
+            
+            <img src="att.qinRJRdZk5uRPfzTV5LLWtC3_BvNc47dYtI2am68Mtc.jpeg" alt="เรทราคาฝากขาย" class="w-full max-w-lg mx-auto rounded-xl border-2 border-neon-blue shadow-[0_4px_15px_rgba(0,0,0,0.5)] mb-6 object-cover z-10">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl z-10 text-xs md:text-sm">
+                <div class="space-y-2">
+                    <div class="score-row bg-[#0600AB] border-[#0033FF] text-white"><span>500 – 900</span><span class="bg-white/20 px-3 py-0.5 rounded-lg">15 B</span></div>
+                    <div class="score-row bg-[#0600AB] border-[#0033FF] text-white"><span>1000 – 1499</span><span class="bg-white/20 px-3 py-0.5 rounded-lg">25 B</span></div>
+                    <div class="score-row bg-[#0600AB] border-[#0033FF] text-white"><span>1500 – 1999</span><span class="bg-white/20 px-3 py-0.5 rounded-lg">30 B</span></div>
+                    <div class="score-row bg-[#0600AB] border-[#0033FF] text-white"><span>2000 – 2499</span><span class="bg-white/20 px-3 py-0.5 rounded-lg">45 B</span></div>
+                    <div class="score-row bg-[#0600AB] border-[#0033FF] text-white"><span>2500 – 4499</span><span class="bg-white/20 px-3 py-0.5 rounded-lg">57 B</span></div>
+                    <div class="score-row bg-[#0600AB] border-[#0033FF] text-white"><span>4500 – 5999</span><span class="bg-white/20 px-3 py-0.5 rounded-lg">65 B</span></div>
+                    <div class="score-row bg-[#0600AB] border-[#0033FF] text-white"><span>6000 – 7500</span><span class="bg-white/20 px-3 py-0.5 rounded-lg">80 B</span></div>
+                    <div class="score-row bg-[#0600AB] border-[#0033FF] text-white"><span>7501 – 8500</span><span class="bg-white/20 px-3 py-0.5 rounded-lg">95 B</span></div>
+                </div>
+                <div class="space-y-2">
+                    <div class="score-row bg-[#0033FF] border-[#977DFF] text-white"><span>8501 – 9999</span><span class="bg-white/20 px-3 py-0.5 rounded-lg">145 B</span></div>
+                    <div class="score-row bg-[#0033FF] border-[#977DFF] text-white"><span>10,000+</span><span class="bg-white/20 px-3 py-0.5 rounded-lg">1.9%</span></div>
+                    <div class="score-row bg-[#0033FF] border-[#977DFF] text-white"><span>14,000+</span><span class="bg-white/20 px-3 py-0.5 rounded-lg">2.5%</span></div>
+                    <div class="score-row bg-[#0033FF] border-[#977DFF] text-white"><span>19,000+</span><span class="bg-white/20 px-3 py-0.5 rounded-lg">3.5%</span></div>
+                    <div class="score-row bg-[#0033FF] border-[#977DFF] text-white"><span>30,000+</span><span class="bg-white/20 px-3 py-0.5 rounded-lg">4.5%</span></div>
+                    <div class="score-row bg-[#0033FF] border-[#977DFF] text-white"><span>50,000+</span><span class="bg-white/20 px-3 py-0.5 rounded-lg">4.7%</span></div>
+                    <div class="score-row bg-[#0033FF] border-[#977DFF] text-white"><span>70,000+</span><span class="bg-white/20 px-3 py-0.5 rounded-lg">5%</span></div>
+                    <div class="score-row bg-[#0033FF] border-[#977DFF] text-white"><span>100,000</span><span class="bg-white/20 px-3 py-0.5 rounded-lg">5.5%</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-card rounded-2xl p-6 border border-[#0033FF]/40 md:col-span-2 flex flex-col items-center">
+            <h2 class="font-fredoka text-3xl text-3d-header mb-4 z-10 uppercase">เรทราคาหาไอดี</h2>
+            
+            <img src="IMG_0154.jpeg" alt="เรทราคาหาไอดี" class="w-full max-w-lg mx-auto rounded-xl border-2 border-neon-pink shadow-[0_4px_15px_rgba(0,0,0,0.5)] mb-6 object-cover z-10">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-4xl z-10 text-xs md:text-sm">
+                <div class="space-y-2">
+                    <div class="score-row bg-neon-pink border-[#977DFF] text-[#00033D]"><span>1 – 900</span><span class="font-bold bg-black/10 px-3 py-0.5 rounded-lg">40 B</span></div>
+                    <div class="score-row bg-neon-pink border-[#977DFF] text-[#00033D]"><span>901 – 1900</span><span class="font-bold bg-black/10 px-3 py-0.5 rounded-lg">57 B</span></div>
+                    <div class="score-row bg-neon-pink border-[#977DFF] text-[#00033D]"><span>1901 – 3500</span><span class="font-bold bg-black/10 px-3 py-0.5 rounded-lg">75 B</span></div>
+                    <div class="score-row bg-neon-pink border-[#977DFF] text-[#00033D]"><span>3501 – 6000</span><span class="font-bold bg-black/10 px-3 py-0.5 rounded-lg">90 B</span></div>
+                    <div class="score-row bg-neon-pink border-[#977DFF] text-[#00033D]"><span>6001 – 9000</span><span class="font-bold bg-black/10 px-3 py-0.5 rounded-lg">120 B</span></div>
+                    <div class="score-row bg-neon-pink border-[#977DFF] text-[#00033D]"><span>9001 – 9,999</span><span class="font-bold bg-black/10 px-3 py-0.5 rounded-lg">145 B</span></div>
+                </div>
+                <div class="space-y-2">
+                    <div class="score-row bg-neon-yellow border-[#FFCCF2] text-[#00033D]"><span>10,000+++</span><span class="font-bold bg-black/10 px-3 py-0.5 rounded-lg">170 B</span></div>
+                    <div class="score-row bg-neon-yellow border-[#FFCCF2] text-[#00033D]"><span>15,000+++</span><span class="font-bold bg-black/10 px-3 py-0.5 rounded-lg">200 B</span></div>
+                    <div class="score-row bg-neon-yellow border-[#FFCCF2] text-[#00033D]"><span>30,000+++</span><span class="font-bold bg-black/10 px-3 py-0.5 rounded-lg">250 B</span></div>
+                    <div class="score-row bg-neon-yellow border-[#FFCCF2] text-[#00033D]"><span>50,000+++</span><span class="font-bold bg-black/10 px-3 py-0.5 rounded-lg">275 B</span></div>
+                    <div class="score-row bg-neon-yellow border-[#FFCCF2] text-[#00033D]"><span>100,000+++</span><span class="font-bold bg-black/10 px-3 py-0.5 rounded-lg">300 B</span></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-card rounded-2xl p-6 border border-[#0033FF]/40 md:col-span-2">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 z-10 relative">
+                
+                <div>
+                    <h3 class="font-fredoka text-neon-pink tracking-wider mb-4 text-xl">How to Order</h3>
+                    <div class="bg-[#00033D]/80 border border-[#0033FF]/40 rounded-lg p-4 text-sm space-y-3">
+                        <div class="flex items-start">
+                            <div class="bg-neon-blue text-white rounded-full w-5 h-5 flex items-center justify-center shrink-0 mr-3 mt-0.5 text-xs font-bold">1</div>
+                            <span class="text-gray-200">ทักแชทแจ้งความต้องการ (หาไอดี / ฝากขาย / ทำป้ายเรท)</span>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-neon-blue text-white rounded-full w-5 h-5 flex items-center justify-center shrink-0 mr-3 mt-0.5 text-xs font-bold">2</div>
+                            <span class="text-gray-200">ส่งรายละเอียดตามบรีฟ ฟอร์ม หรือรูปภาพที่ต้องใช้ทำป้าย</span>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-neon-blue text-white rounded-full w-5 h-5 flex items-center justify-center shrink-0 mr-3 mt-0.5 text-xs font-bold">3</div>
+                            <span class="text-gray-200">ชำระเงินตามเรทราคาที่ตกลง <span class="text-neon-yellow">(ชำระก่อนเริ่มงาน)</span></span>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-neon-blue text-white rounded-full w-5 h-5 flex items-center justify-center shrink-0 mr-3 mt-0.5 text-xs font-bold">4</div>
+                            <span class="text-gray-200">รอรับคิวและงานตามกำหนด (เช็คคิวผ่านเว็บได้เลย)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-fredoka text-neon-yellow tracking-wider mb-4 text-xl">FAQ คำถามที่พบบ่อย</h3>
+                    <div class="space-y-3">
+                        <div class="bg-[#00033D]/60 p-3 rounded-xl border-l-4 border-neon-blue">
+                            <p class="font-bold text-neon-blue text-sm mb-1">Q: รับงานด่วนไหมครับ?</p>
+                            <p class="text-[11px] md:text-xs text-gray-300">A: สามารถทักมาสอบถามคิวงานก่อนได้ หากคิวไม่เยอะยินดีลัดคิวให้ฟรี</p>
+                        </div>
+                        <div class="bg-[#00033D]/60 p-3 rounded-xl border-l-4 border-[#977DFF]">
+                            <p class="font-bold text-[#977DFF] text-sm mb-1">Q: มีประกันหลังการขายไหม?</p>
+                            <p class="text-[11px] md:text-xs text-gray-300">A: หากงานเกิดข้อผิดพลาดจากทางร้าน (สะกดผิด/ข้อมูลตกหล่น) แก้ไขให้ฟรีทันที</p>
+                        </div>
+                        <div class="bg-[#00033D]/60 p-3 rounded-xl border-l-4 border-neon-red">
+                            <p class="font-bold text-neon-red text-sm mb-1">Q: ขอยกเลิกและคืนเงินได้ไหม?</p>
+                            <p class="text-[11px] md:text-xs text-gray-300">A: หากทางร้านเริ่มดำเนินการไปแล้ว <span class="text-red-400">จะไม่สามารถขอคืนเงินได้ในทุกกรณี</span></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="game-card rounded-2xl p-6 border border-[#0033FF]/40 md:col-span-2 flex flex-col items-center justify-center text-center">
+            
+            <h2 class="font-fredoka text-4xl md:text-5xl text-3d-title mb-4 z-10 uppercase mt-4">Contact</h2>
+            <p class="text-neon-yellow font-fredoka tracking-widest text-xs mb-6 z-10">TA RAY SHOP</p>
+            
+            <div class="flex space-x-4 z-10 mb-6">
+                <a href="https://www.facebook.com/share/1HXq3wncat/?mibextid=wwXIfr" target="_blank" class="flex items-center justify-center px-6 py-3 bg-game-black border-2 border-neon-blue rounded-xl text-neon-blue hover:bg-neon-blue hover:text-white transition shadow-[4px_4px_0_#0033FF]">
+                    <svg class="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/></svg>
+                    <span class="font-bold tracking-wider text-sm">ทักแชท Facebook</span>
+                </a>
+            </div>
+            <p class="text-gray-400 text-[10px] z-10">ขอบคุณที่ไว้วางใจร้าน Ta Ray</p>
+        </div>
+
+    </div>
+</body>
+</html>
